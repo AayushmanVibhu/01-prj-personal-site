@@ -561,13 +561,24 @@ body {
 
 .contact h2 {
   /* Make the heading larger */
-  font-size: 42px;
-  /* Add space below the heading */
-  margin-bottom: 60px;
-  /* Set heading color */
+  font-size: 2.5em;
   color: #7c4db8;
-  /* Add text shadow for better visibility */
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.contact-subtitle {
+  font-size: 1.2em;
+  color: #a0e7e5;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+  font-style: italic;
+  text-align: center;
+  max-width: 500px;
+  display: block;
 }
 
 /* Contact info for email and phone (no box) */
@@ -657,4 +668,151 @@ body {
   font-size: 16px;
   /* Reset margin */
   margin: 0;
+}
+
+/* Updated contact item styles for the new contact page */
+.contact-item {
+  /* Update width to accommodate new layout */
+  width: auto;
+  /* Add padding */
+  padding: 30px;
+  /* Set background color */
+  background-color: #252525;
+  /* Add border */
+  border: 2px solid #3a3a3a;
+  /* Round corners */
+  border-radius: 10px;
+  /* Center content */
+  text-align: center;
+  /* Create flex layout */
+  display: flex;
+  /* Align items */
+  align-items: center;
+  /* Add gap between icon and text */
+  gap: 20px;
+  /* Add smooth transition */
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  /* Change border color on hover */
+  border-color: #5dccde;
+  /* Lift up on hover */
+  transform: translateY(-5px);
+  /* Add shadow on hover */
+  box-shadow: 0 10px 20px rgba(93, 204, 222, 0.2);
+}
+
+.contact-item i {
+  /* Make icons large */
+  font-size: 50px;
+  /* Set icon color */
+  color: #5dccde;
+  /* Set minimum width */
+  min-width: 60px;
+}
+
+.contact-details {
+  /* Align text to left */
+  text-align: left;
+}
+
+.contact-details h3 {
+  /* Set heading color */
+  color: #a0e7e5;
+  /* Add margin */
+  margin: 0 0 10px 0;
+  /* Set font size */
+  font-size: 18px;
+}
+
+.contact-details a {
+  /* Set link color */
+  color: #5dccde;
+  /* Remove underline */
+  text-decoration: none;
+  /* Add transition */
+  transition: color 0.3s;
+  /* Set font size */
+  font-size: 16px;
+}
+
+.contact-details a:hover {
+  /* Change color on hover */
+  color: #a0e7e5;
+  /* Add underline on hover */
+  text-decoration: underline;
+}
+
+/* Social links section styles */
+.social-links {
+  /* Add spacing above */
+  margin-top: 60px;
+  /* Add padding */
+  padding-top: 40px;
+  /* Add border on top */
+  border-top: 2px solid #3a3a3a;
+}
+
+.social-links h3 {
+  /* Set heading color */
+  color: #a0e7e5;
+  /* Set font size */
+  font-size: 24px;
+  /* Add spacing below */
+  margin-bottom: 30px;
+}
+
+.social-icons {
+  /* Create flex container */
+  display: flex;
+  /* Center items */
+  justify-content: center;
+  /* Add gap between icons */
+  gap: 30px;
+  /* Flex wrap for responsive design */
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  /* Set icon size */
+  font-size: 40px;
+  /* Set icon color */
+  color: #5dccde;
+  /* Remove default link styling */
+  text-decoration: none;
+  /* Add transition */
+  transition: all 0.3s;
+  /* Set dimensions */
+  width: 60px;
+  height: 60px;
+  /* Create flex container for centering */
+  display: flex;
+  /* Center content */
+  align-items: center;
+  justify-content: center;
+  /* Add border */
+  border: 2px solid #5dccde;
+  /* Round corners */
+  border-radius: 50%;
+}
+
+.social-icon:hover {
+  /* Change background color on hover */
+  background-color: #5dccde;
+  /* Change text color on hover */
+  color: #0f1419;
+  /* Add shadow on hover */
+  box-shadow: 0 5px 15px rgba(93, 204, 222, 0.4);
+  /* Scale up on hover */
+  transform: scale(1.1);
+}
+
+.contact-subtitle {
+  /* Set subtitle color */
+  color: #a0e7e5;
+  /* Set font size */
+  font-size: 18px;
+  /* Add spacing */
+  margin-bottom: 50px;
 }
