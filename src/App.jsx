@@ -63,6 +63,30 @@ function Header() {
   );
 }
 
+function TechBackdrop() {
+  return (
+    <div className="tech-backdrop" aria-hidden="true">
+      <div className="mesh mesh-one" />
+      <div className="mesh mesh-two" />
+      <div className="mesh mesh-three" />
+      <div className="grid-layer" />
+      <div className="scan-line" />
+      <div className="data-stream stream-one">
+        <span>RAG</span>
+        <span>OPENAI</span>
+        <span>NEXT.JS</span>
+        <span>VECTOR</span>
+      </div>
+      <div className="data-stream stream-two">
+        <span>SUPABASE</span>
+        <span>ROUTES</span>
+        <span>AI</span>
+        <span>TRAVEL</span>
+      </div>
+    </div>
+  );
+}
+
 function SectionHeading({ kicker, title, children }) {
   return (
     <div className="section-heading">
@@ -95,6 +119,12 @@ function Hero() {
       </div>
       <div className="hero-card">
         <div className="orbit" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className="signal-stack" aria-hidden="true">
+          <span />
           <span />
           <span />
           <span />
@@ -285,6 +315,7 @@ function Contact() {
 export default function App() {
   return (
     <>
+      <TechBackdrop />
       <Header />
       <main>
         <Hero />
