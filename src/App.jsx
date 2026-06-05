@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { experience, projects, skills, stats } from "./data.js";
+import { experience, highlightGroups, projects, skills } from "./data.js";
 import profileImage from "../img/Aayushman Vibhu image.jpeg";
 
 const navItems = [
@@ -45,8 +45,8 @@ function Header() {
   return (
     <header className="site-header">
       <a className="brand" href="#home" aria-label="Aayushman Vibhu home">
-        <span>AV</span>
         <strong>Aayushman Vibhu</strong>
+        <span>AI + Product Builder</span>
       </a>
       <nav aria-label="Primary navigation">
         {navItems.map((item) => (
@@ -141,7 +141,7 @@ function Hero() {
 
 function About() {
   return (
-    <section id="about" className="content-section">
+    <section id="about" className="content-section section-panel">
       <SectionHeading kicker="About" title="Builder first. Student always.">
         I am a Computer Science student at ASU focused on AI-assisted products,
         retrieval systems, and full-stack engineering.
@@ -173,22 +173,39 @@ function About() {
   );
 }
 
-function StatsBand() {
+function Highlights() {
   return (
-    <section className="stats-band" aria-label="Profile highlights">
-      {stats.map((stat) => (
-        <div key={stat.label}>
-          <strong>{stat.value}</strong>
-          <span>{stat.label}</span>
-        </div>
-      ))}
+    <section className="highlights-section" aria-label="Profile highlights">
+      <div className="highlights-intro">
+        <p className="kicker">Highlights</p>
+        <h2>Organized by the kind of signal they represent.</h2>
+        <p>
+          Awards stay with awards, products stay with products, and technical work
+          gets its own lane.
+        </p>
+      </div>
+      <div className="highlight-grid">
+        {highlightGroups.map((group) => (
+          <article key={group.title} className={`highlight-card ${group.accent}`}>
+            <h3>{group.title}</h3>
+            <div className="highlight-items">
+              {group.items.map((item) => (
+                <div key={`${group.title}-${item.label}`}>
+                  <strong>{item.value}</strong>
+                  <span>{item.label}</span>
+                </div>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }
 
 function Skills() {
   return (
-    <section id="skills" className="content-section">
+    <section id="skills" className="content-section section-panel alternate">
       <SectionHeading kicker="Skills" title="A modern AI/full-stack toolkit.">
         Languages, frameworks, platforms, and AI patterns I use to ship working
         products.
@@ -264,7 +281,7 @@ function Projects() {
 
 function Experience() {
   return (
-    <section id="experience" className="content-section">
+    <section id="experience" className="content-section section-panel compact-panel">
       <SectionHeading kicker="Experience" title="Where the work is happening now." />
       <div className="timeline">
         {experience.map((item) => (
@@ -319,7 +336,7 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <StatsBand />
+        <Highlights />
         <About />
         <Skills />
         <Projects />

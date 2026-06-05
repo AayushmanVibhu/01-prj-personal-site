@@ -1,8 +1,36 @@
-export const stats = [
-  { value: "3.87", label: "ASU GPA" },
-  { value: "4x", label: "Dean's List" },
-  { value: "100+", label: "Experiences curated" },
-  { value: "625+", label: "Cities supported through AI workflows" },
+export const highlightGroups = [
+  {
+    title: "Awards",
+    accent: "green",
+    items: [
+      { value: "4x", label: "Dean's List at ASU" },
+      { value: "2x", label: "Hackathon winner / placement" },
+    ],
+  },
+  {
+    title: "Product Builds",
+    accent: "cyan",
+    items: [
+      { value: "Flyture", label: "AI travel platform founder" },
+      { value: "AIDed", label: "AI health literacy assistant" },
+    ],
+  },
+  {
+    title: "AI & Engineering",
+    accent: "violet",
+    items: [
+      { value: "RAG", label: "Retrieval and semantic search" },
+      { value: "Full-stack", label: "React, Next.js, Supabase, APIs" },
+    ],
+  },
+  {
+    title: "Campus & Community",
+    accent: "amber",
+    items: [
+      { value: "BCC", label: "Co-founder, Brain Computing Club" },
+      { value: "ASU", label: "Events, music, and volunteering" },
+    ],
+  },
 ];
 
 export const skills = [
