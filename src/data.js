@@ -44,7 +44,14 @@ export const skills = [
   },
   {
     title: "Backend",
-    items: ["Node.js", "Express.js", "REST APIs", "Supabase", "FastAPI"],
+    items: [
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "Supabase",
+      "SQL Databases",
+      "FastAPI",
+    ],
   },
   {
     title: "AI / ML",
@@ -64,10 +71,12 @@ export const skills = [
     items: [
       "Git/GitHub",
       "Vercel",
+      "Google Cloud",
+      "Resend",
+      "Duffel API",
+      "Google Maps",
       "Cloudflare Workers",
       "Linux",
-      "Resend",
-      "Google Cloud",
       "AWS",
       "Azure",
     ],
@@ -88,7 +97,19 @@ export const projects = [
     title: "Flyture",
     eyebrow: "Founder | March 2026 - Present",
     link: "https://flyture.co",
-    stack: ["Next.js", "TypeScript", "Supabase", "OpenAI", "Vercel"],
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Supabase",
+      "SQL",
+      "Vercel",
+      "Duffel API",
+      "Google Maps",
+      "Google Cloud",
+      "Resend",
+      "OpenAI API",
+    ],
     summary:
       "AI travel discovery, planning, and navigation platform combining destination discovery, personalized trip planning, flight search, geolocation-aware routing, saved destinations, and user-generated content workflows.",
     bullets: [

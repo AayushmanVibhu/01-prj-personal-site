@@ -73,17 +73,50 @@ function TechBackdrop() {
       <div className="scan-line" />
       <div className="data-stream stream-one">
         <span>RAG</span>
-        <span>OPENAI</span>
+        <span>DUFFEL</span>
         <span>NEXT.JS</span>
-        <span>VECTOR</span>
+        <span>SUPABASE</span>
       </div>
       <div className="data-stream stream-two">
-        <span>SUPABASE</span>
-        <span>ROUTES</span>
-        <span>AI</span>
-        <span>TRAVEL</span>
+        <span>RESEND</span>
+        <span>MAPS</span>
+        <span>SQL</span>
+        <span>FLYTURE</span>
       </div>
     </div>
+  );
+}
+
+function MotionLab() {
+  return (
+    <aside className="motion-lab" aria-label="Animated build system panel">
+      <div className="lab-header">
+        <span />
+        <span />
+        <span />
+      </div>
+      <div className="lab-stage">
+        <div className="lab-node node-one">plan</div>
+        <div className="lab-node node-two">search</div>
+        <div className="lab-node node-three">route</div>
+        <div className="lab-node node-four">notify</div>
+        <div className="lab-core">
+          <span>Flyture</span>
+        </div>
+        <svg className="lab-lines" viewBox="0 0 420 300" aria-hidden="true">
+          <path d="M92 78 C150 38, 250 38, 322 78" />
+          <path d="M86 216 C148 262, 260 262, 334 214" />
+          <path d="M86 92 C130 146, 132 184, 86 210" />
+          <path d="M334 88 C292 142, 294 184, 334 208" />
+        </svg>
+      </div>
+      <div className="lab-footer">
+        <span>Next.js</span>
+        <span>Supabase</span>
+        <span>Duffel</span>
+        <span>Resend</span>
+      </div>
+    </aside>
   );
 }
 
@@ -102,11 +135,11 @@ function Hero() {
     <section id="home" className="hero">
       <div className="hero-copy">
         <p className="kicker">Computer Science at Arizona State University</p>
-        <h1>AI products, retrieval systems, and full-stack tools with real-world traction.</h1>
+        <h1>I build travel and AI tools around real people, not just prompts.</h1>
         <p>
-          I build software that moves people from messy questions to useful action:
-          travel discovery, health literacy, business intelligence, AI assistants,
-          and the systems underneath them.
+          Right now my work is split between Flyture, AI workflow engineering at
+          Global Chamber, and the kind of projects that start as a small question
+          and slowly become a real product.
         </p>
         <div className="hero-actions">
           <a className="button primary" href="#projects">
@@ -117,23 +150,21 @@ function Hero() {
           </a>
         </div>
       </div>
-      <div className="hero-card">
-        <div className="orbit" aria-hidden="true">
-          <span />
-          <span />
-          <span />
+      <div className="hero-side">
+        <div className="hero-card">
+          <div className="signal-stack" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+            <span />
+          </div>
+          <img src={profileImage} alt="Aayushman Vibhu" />
+          <div>
+            <p className="kicker">Currently</p>
+            <h2>Building Flyture and AI workflows at Global Chamber.</h2>
+          </div>
         </div>
-        <div className="signal-stack" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-          <span />
-        </div>
-        <img src={profileImage} alt="Aayushman Vibhu" />
-        <div>
-          <p className="kicker">Currently</p>
-          <h2>Building Flyture and AI workflows at Global Chamber.</h2>
-        </div>
+        <MotionLab />
       </div>
     </section>
   );
@@ -143,8 +174,8 @@ function About() {
   return (
     <section id="about" className="content-section section-panel">
       <SectionHeading kicker="About" title="Builder first. Student always.">
-        I am a Computer Science student at ASU focused on AI-assisted products,
-        retrieval systems, and full-stack engineering.
+        I am a Computer Science student at ASU, but most of my learning happens
+        when I am trying to ship something that has to make sense to someone else.
       </SectionHeading>
       <div className="about-grid">
         <article className="story-card large">
@@ -178,10 +209,10 @@ function Highlights() {
     <section className="highlights-section" aria-label="Profile highlights">
       <div className="highlights-intro">
         <p className="kicker">Highlights</p>
-        <h2>Organized by the kind of signal they represent.</h2>
+        <h2>A few signals, grouped like a person would read them.</h2>
         <p>
-          Awards stay with awards, products stay with products, and technical work
-          gets its own lane.
+          The old version mixed random numbers together. This version separates
+          recognition, products, engineering depth, and campus work.
         </p>
       </div>
       <div className="highlight-grid">
@@ -207,8 +238,7 @@ function Skills() {
   return (
     <section id="skills" className="content-section section-panel alternate">
       <SectionHeading kicker="Skills" title="A modern AI/full-stack toolkit.">
-        Languages, frameworks, platforms, and AI patterns I use to ship working
-        products.
+        The practical stack behind the things I am actually building.
       </SectionHeading>
       <div className="skills-grid">
         {skills.map((group) => (

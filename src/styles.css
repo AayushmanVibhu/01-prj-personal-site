@@ -14,6 +14,10 @@
   --coral: #ff6b8a;
   --violet: #b794ff;
   --shadow: 0 28px 80px rgba(0, 0, 0, 0.36);
+  --serif: Georgia, "Times New Roman", serif;
+  --sans:
+    "Aptos", "Segoe UI", Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, sans-serif;
 }
 
 * {
@@ -31,9 +35,7 @@ body {
   background:
     linear-gradient(180deg, rgba(5, 7, 18, 0.2), rgba(5, 7, 18, 0.98)),
     linear-gradient(135deg, var(--bg) 0%, #071322 38%, #10112b 72%, #080914 100%);
-  font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: var(--sans);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -244,7 +246,7 @@ main {
 .hero {
   min-height: calc(100vh - 74px);
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(330px, 0.85fr);
+  grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.98fr);
   gap: 44px;
   align-items: center;
   padding: 64px 0 54px;
@@ -272,8 +274,11 @@ p {
 
 h1 {
   margin-bottom: 24px;
-  font-size: clamp(3rem, 6vw, 5.4rem);
-  line-height: 0.96;
+  max-width: 780px;
+  font-family: var(--serif);
+  font-size: clamp(3rem, 5.7vw, 5.1rem);
+  font-weight: 680;
+  line-height: 1.02;
   letter-spacing: 0;
 }
 
@@ -284,8 +289,10 @@ h1,
 
 h2 {
   margin-bottom: 18px;
-  font-size: clamp(2.1rem, 4vw, 3.55rem);
-  line-height: 1;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  font-weight: 650;
+  line-height: 1.06;
   letter-spacing: 0;
 }
 
@@ -301,7 +308,7 @@ h3 {
 .timeline p,
 .contact-section p {
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 1.02rem;
 }
 
 .hero-actions {
@@ -360,6 +367,7 @@ h3 {
 }
 
 .hero-card,
+.motion-lab,
 .story-card,
 .skill-card,
 .project-detail,
@@ -376,7 +384,7 @@ h3 {
 
 .hero-card {
   position: relative;
-  min-height: 560px;
+  min-height: 300px;
   display: grid;
   align-content: end;
   gap: 26px;
@@ -386,6 +394,11 @@ h3 {
     linear-gradient(145deg, rgba(57, 231, 255, 0.12), transparent 34%),
     linear-gradient(320deg, rgba(255, 107, 138, 0.14), transparent 36%),
     rgba(9, 17, 31, 0.72);
+}
+
+.hero-side {
+  display: grid;
+  gap: 18px;
 }
 
 .hero-card::before {
@@ -404,7 +417,7 @@ h3 {
 .hero-card img {
   position: relative;
   z-index: 1;
-  width: min(100%, 390px);
+  width: min(100%, 220px);
   aspect-ratio: 1;
   justify-self: center;
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -418,39 +431,7 @@ h3 {
   position: relative;
   z-index: 1;
   margin-bottom: 0;
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
-}
-
-.orbit {
-  position: absolute;
-  inset: 22px;
-  display: grid;
-  place-items: center;
-  opacity: 0.9;
-  animation: orbitSpin 26s linear infinite;
-}
-
-.orbit span {
-  position: absolute;
-  border: 1px solid rgba(57, 231, 255, 0.24);
-  border-radius: 999px;
-}
-
-.orbit span:nth-child(1) {
-  width: 84%;
-  aspect-ratio: 1;
-}
-
-.orbit span:nth-child(2) {
-  width: 62%;
-  aspect-ratio: 1;
-  border-color: rgba(93, 255, 181, 0.26);
-}
-
-.orbit span:nth-child(3) {
-  width: 42%;
-  aspect-ratio: 1;
-  background: rgba(57, 231, 255, 0.08);
+  font-size: clamp(1.45rem, 3vw, 2rem);
 }
 
 .signal-stack {
@@ -461,6 +442,132 @@ h3 {
   display: flex;
   align-items: end;
   gap: 6px;
+}
+
+.motion-lab {
+  min-height: 280px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(57, 231, 255, 0.16), transparent 10rem),
+    linear-gradient(135deg, rgba(9, 17, 31, 0.88), rgba(17, 14, 43, 0.86));
+}
+
+.lab-header {
+  display: flex;
+  gap: 7px;
+  padding: 16px 18px 0;
+}
+
+.lab-header span {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--coral);
+  box-shadow: 0 0 16px rgba(255, 107, 138, 0.35);
+}
+
+.lab-header span:nth-child(2) {
+  background: var(--amber);
+}
+
+.lab-header span:nth-child(3) {
+  background: var(--green);
+}
+
+.lab-stage {
+  position: relative;
+  min-height: 210px;
+}
+
+.lab-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: rgba(57, 231, 255, 0.34);
+  stroke-dasharray: 12 12;
+  stroke-width: 1.5;
+  animation: lineFlow 10s linear infinite;
+}
+
+.lab-core {
+  position: absolute;
+  inset: 50%;
+  z-index: 2;
+  display: grid;
+  width: 96px;
+  height: 96px;
+  place-items: center;
+  border: 1px solid rgba(93, 255, 181, 0.42);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(93, 255, 181, 0.22), transparent 68%),
+    rgba(9, 17, 31, 0.86);
+  box-shadow: 0 0 34px rgba(93, 255, 181, 0.2);
+  transform: translate(-50%, -50%);
+  animation: corePulse 2.8s ease-in-out infinite;
+}
+
+.lab-core span {
+  color: var(--green);
+  font-size: 0.82rem;
+  font-weight: 950;
+}
+
+.lab-node {
+  position: absolute;
+  z-index: 3;
+  min-width: 68px;
+  padding: 8px 10px;
+  border: 1px solid rgba(216, 230, 255, 0.18);
+  border-radius: 999px;
+  color: var(--soft);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-align: center;
+  animation: nodeFloat 4s ease-in-out infinite;
+}
+
+.node-one {
+  top: 34px;
+  left: 42px;
+}
+
+.node-two {
+  top: 34px;
+  right: 42px;
+  animation-delay: -1s;
+}
+
+.node-three {
+  right: 32px;
+  bottom: 36px;
+  animation-delay: -2s;
+}
+
+.node-four {
+  left: 34px;
+  bottom: 34px;
+  animation-delay: -3s;
+}
+
+.lab-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 18px 18px;
+}
+
+.lab-footer span {
+  padding: 5px 9px;
+  border: 1px solid rgba(57, 231, 255, 0.16);
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.74rem;
+  font-weight: 850;
 }
 
 .signal-stack span {
@@ -937,15 +1044,6 @@ h3 {
   }
 }
 
-@keyframes orbitSpin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes hoverPortrait {
   0%,
   100% {
@@ -964,6 +1062,35 @@ h3 {
   to {
     transform: scaleY(1.08);
     opacity: 1;
+  }
+}
+
+@keyframes lineFlow {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -96;
+  }
+}
+
+@keyframes corePulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+}
+
+@keyframes nodeFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
   }
 }
 
@@ -996,6 +1123,7 @@ h3 {
   }
 
   .hero,
+  .hero-side,
   .about-grid,
   .highlights-section,
   .project-workbench,
@@ -1028,7 +1156,7 @@ h3 {
   }
 
   h1 {
-    font-size: clamp(2.55rem, 14vw, 4rem);
+    font-size: clamp(2.45rem, 13vw, 3.8rem);
   }
 
   h2 {
@@ -1066,5 +1194,24 @@ h3 {
 
   .data-stream {
     display: none;
+  }
+
+  .lab-stage {
+    min-height: 190px;
+  }
+
+  .lab-node {
+    min-width: 58px;
+    font-size: 0.72rem;
+  }
+
+  .node-one,
+  .node-four {
+    left: 18px;
+  }
+
+  .node-two,
+  .node-three {
+    right: 18px;
   }
 }
