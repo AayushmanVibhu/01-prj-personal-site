@@ -72,16 +72,19 @@ function TechBackdrop() {
       <div className="grid-layer" />
       <div className="scan-line" />
       <div className="data-stream stream-one">
-        <span>RAG</span>
-        <span>DUFFEL</span>
-        <span>NEXT.JS</span>
-        <span>SUPABASE</span>
+        <span>DISCOVER</span>
+        <span>SAVE</span>
+        <span>PLAN</span>
+        <span>ROUTE</span>
+        <span>NOTIFY</span>
       </div>
       <div className="data-stream stream-two">
-        <span>RESEND</span>
+        <span>NEXT.JS</span>
+        <span>SUPABASE</span>
+        <span>DUFFEL</span>
         <span>MAPS</span>
+        <span>RESEND</span>
         <span>SQL</span>
-        <span>FLYTURE</span>
       </div>
     </div>
   );
