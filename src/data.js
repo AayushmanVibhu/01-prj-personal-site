@@ -4,14 +4,14 @@ export const highlightGroups = [
     accent: "green",
     items: [
       { value: "4x", label: "Dean's List at ASU" },
-      { value: "2x", label: "Hackathon winner / placement" },
+      { value: "2x", label: "Hackathon winner" },
     ],
   },
   {
     title: "Product Builds",
     accent: "cyan",
     items: [
-      { value: "Flyture", label: "AI travel platform founder" },
+      { value: "Flyture", label: "Founder & full stack developer" },
       { value: "AIDed", label: "AI health literacy assistant" },
     ],
   },
@@ -28,7 +28,7 @@ export const highlightGroups = [
     accent: "amber",
     items: [
       { value: "BCC", label: "Co-founder, Brain Computing Club" },
-      { value: "ASU", label: "Events, music, and volunteering" },
+      { value: "10+", label: "SurDevils performances" },
     ],
   },
 ];
@@ -95,7 +95,7 @@ export const skills = [
 export const projects = [
   {
     title: "Flyture",
-    eyebrow: "Founder | March 2026 - Present",
+    eyebrow: "Founder & Full Stack Developer | March 2026 - Present",
     link: "https://flyture.co",
     stack: [
       "Next.js",
@@ -162,11 +162,18 @@ export const projects = [
 
 export const experience = [
   {
+    role: "Founder & Full Stack Developer",
+    org: "Flyture",
+    date: "Mar 2026 - Present",
+    detail:
+      "Founded and built an AI travel discovery, planning, flight search, and navigation platform with Next.js, TypeScript, Supabase, Vercel, Duffel, Google Maps, Google Cloud, Resend, and OpenAI APIs.",
+  },
+  {
     role: "AI & Software Engineering Intern",
     org: "Global Chamber (Globi)",
-    date: "Feb 2026 - Present",
+    date: "Feb 2026 - May 2026",
     detail:
-      "Improving AI-powered intent classification, retrieval, RAG performance, and assistant workflows for global business intelligence use cases.",
+      "Improved AI-powered intent classification, semantic retrieval, RAG performance, and assistant workflows for member discovery, document search, contact lookup, and business intelligence use cases.",
   },
   {
     role: "Event Assistant",
@@ -181,5 +188,12 @@ export const experience = [
     date: "Current",
     detail:
       "Building a student community focused on neurotechnology, brain-computer interfaces, artificial intelligence, and emerging computing technologies.",
+  },
+  {
+    role: "Keyboard Performer & Singer",
+    org: "SurDevils Band",
+    date: "Current",
+    detail:
+      "Performed at 10+ university and community events including Change the World, Global Nights, open mics, and cultural showcases.",
   },
 ];

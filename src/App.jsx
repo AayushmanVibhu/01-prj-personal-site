@@ -340,7 +340,32 @@ function Projects() {
 function Experience() {
   return (
     <section id="experience" className="content-section section-panel compact-panel">
-      <SectionHeading kicker="Experience" title="The work that is shaping how I build." />
+      <SectionHeading kicker="Experience" title="The work that is shaping how I build.">
+        Flyture is the center of gravity here: the product where I have had to
+        connect engineering, design, travel data, AI, and real user workflows end to end.
+      </SectionHeading>
+      <article className="flyture-experience">
+        <div>
+          <p className="kicker">Primary Experience</p>
+          <h3>Flyture - Founder & Full Stack Developer</h3>
+          <p>
+            Founded and built an AI-powered travel platform that combines destination
+            discovery, personalized trip planning, flight search, saved destinations,
+            location-aware navigation, and creator-driven travel content.
+          </p>
+        </div>
+        <div className="flyture-stack">
+          <span>Next.js</span>
+          <span>TypeScript</span>
+          <span>Supabase</span>
+          <span>SQL</span>
+          <span>Duffel API</span>
+          <span>Google Maps</span>
+          <span>Google Cloud</span>
+          <span>Resend</span>
+          <span>Vercel</span>
+        </div>
+      </article>
       <div className="timeline">
         {experience.map((item) => (
           <article key={`${item.role}-${item.org}`}>
