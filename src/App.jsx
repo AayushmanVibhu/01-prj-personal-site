@@ -120,6 +120,31 @@ function MotionLab() {
   );
 }
 
+function ProjectMap({ project }) {
+  const nodes = project.flow ?? [];
+
+  return (
+    <div className="project-map" aria-label={`${project.title} project flow`}>
+      <div className="map-core">
+        <span>{project.title}</span>
+      </div>
+      <div className="map-orbit">
+        {nodes.map((node, index) => (
+          <span key={`${project.title}-${node}`} className={`map-node node-${index + 1}`}>
+            {node}
+          </span>
+        ))}
+      </div>
+      <svg className="map-lines" viewBox="0 0 520 260" aria-hidden="true">
+        <path d="M92 72 C176 20, 330 20, 428 72" />
+        <path d="M82 184 C172 244, 340 244, 438 184" />
+        <path d="M104 88 C154 130, 154 160, 104 180" />
+        <path d="M418 88 C366 130, 366 160, 418 180" />
+      </svg>
+    </div>
+  );
+}
+
 function SectionHeading({ kicker, title, children }) {
   return (
     <div className="section-heading">
@@ -135,11 +160,11 @@ function Hero() {
     <section id="home" className="hero">
       <div className="hero-copy">
         <p className="kicker">Computer Science at Arizona State University</p>
-        <h1>I build travel and AI tools around real people, not just prompts.</h1>
+        <h1>Building software with a little more patience, taste, and usefulness.</h1>
         <p>
-          Right now my work is split between Flyture, AI workflow engineering at
-          Global Chamber, and the kind of projects that start as a small question
-          and slowly become a real product.
+          I am Aayushman, a CS student at ASU. I care about products that feel
+          practical and personal: travel planning, health literacy, better search,
+          and small systems that quietly make a day easier.
         </p>
         <div className="hero-actions">
           <a className="button primary" href="#projects">
@@ -209,10 +234,11 @@ function Highlights() {
     <section className="highlights-section" aria-label="Profile highlights">
       <div className="highlights-intro">
         <p className="kicker">Highlights</p>
-        <h2>A few signals, grouped like a person would read them.</h2>
+        <h2>What I have been giving my time to.</h2>
         <p>
-          The old version mixed random numbers together. This version separates
-          recognition, products, engineering depth, and campus work.
+          A quick read on the different parts of my work: recognition at ASU,
+          products I have shipped, the technical systems behind them, and the
+          communities I am helping build.
         </p>
       </div>
       <div className="highlight-grid">
@@ -265,8 +291,7 @@ function Projects() {
   return (
     <section id="projects" className="content-section">
       <SectionHeading kicker="Projects" title="Recent builds worth opening.">
-        From production travel software to hackathon-winning AI health navigation
-        and systems programming.
+        A closer look at the products and systems I have spent real time with.
       </SectionHeading>
       <div className="project-workbench">
         <div className="project-tabs" role="tablist" aria-label="Projects">
@@ -285,24 +310,27 @@ function Projects() {
           ))}
         </div>
         <article className="project-detail">
-          <p className="kicker">{selected.eyebrow}</p>
-          <h3>{selected.title}</h3>
-          <p>{selected.summary}</p>
-          <div className="pill-row">
-            {selected.stack.map((item) => (
-              <span key={item}>{item}</span>
-            ))}
+          <div className="project-copy">
+            <p className="kicker">{selected.eyebrow}</p>
+            <h3>{selected.title}</h3>
+            <p>{selected.summary}</p>
+            <div className="pill-row">
+              {selected.stack.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+            <ul>
+              {selected.bullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
+            </ul>
+            {selected.link && (
+              <a className="text-link" href={selected.link} target="_blank" rel="noreferrer">
+                Visit {selected.title}
+              </a>
+            )}
           </div>
-          <ul>
-            {selected.bullets.map((bullet) => (
-              <li key={bullet}>{bullet}</li>
-            ))}
-          </ul>
-          {selected.link && (
-            <a className="text-link" href={selected.link} target="_blank" rel="noreferrer">
-              Visit {selected.title}
-            </a>
-          )}
+          <ProjectMap project={selected} />
         </article>
       </div>
     </section>
@@ -312,7 +340,7 @@ function Projects() {
 function Experience() {
   return (
     <section id="experience" className="content-section section-panel compact-panel">
-      <SectionHeading kicker="Experience" title="Where the work is happening now." />
+      <SectionHeading kicker="Experience" title="The work that is shaping how I build." />
       <div className="timeline">
         {experience.map((item) => (
           <article key={`${item.role}-${item.org}`}>
@@ -335,10 +363,11 @@ function Contact() {
     <section id="contact" className="contact-section">
       <div>
         <p className="kicker">Contact</p>
-        <h2>Let us build something useful.</h2>
+        <h2>Say hello.</h2>
         <p>
-          I am open to AI engineering, full-stack, product, and startup-oriented
-          conversations.
+          I am always happy to talk about AI products, travel tech, hackathon
+          ideas, student communities, or interesting ways to make software feel
+          more useful.
         </p>
       </div>
       <div className="contact-grid">

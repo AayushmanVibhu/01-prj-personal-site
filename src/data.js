@@ -110,6 +110,7 @@ export const projects = [
       "Resend",
       "OpenAI API",
     ],
+    flow: ["discover", "save", "plan", "route", "notify"],
     summary:
       "AI travel discovery, planning, and navigation platform combining destination discovery, personalized trip planning, flight search, geolocation-aware routing, saved destinations, and user-generated content workflows.",
     bullets: [
@@ -122,6 +123,7 @@ export const projects = [
     title: "AIDed",
     eyebrow: "2nd Place Hackathon Winner | February 2026",
     stack: ["React", "Node.js", "OpenAI", "RAG", "Vector Search"],
+    flow: ["policy", "chunk", "retrieve", "explain", "guide"],
     summary:
       "AI health insurance assistant that turns complex policy documents into clear navigation and personalized guidance.",
     bullets: [
@@ -134,6 +136,7 @@ export const projects = [
     title: "Global Chamber AI Workflows",
     eyebrow: "AI & Software Engineering Intern | 2026",
     stack: ["RAG", "Embeddings", "Intent Routing", "Semantic Search"],
+    flow: ["intent", "retrieve", "rank", "context", "answer"],
     summary:
       "AI workflow improvements for member discovery, document search, contact lookup, and business intelligence across Global Chamber's network.",
     bullets: [
@@ -146,6 +149,7 @@ export const projects = [
     title: "Pokemud",
     eyebrow: "CSE240 Systems Project | August 2025 - December 2025",
     stack: ["C", "C++", "OOP", "Game State", "Command Parsing"],
+    flow: ["command", "state", "battle", "memory", "result"],
     summary:
       "Pokemon-inspired text-based game engine built while learning object-oriented programming and systems-level design.",
     bullets: [

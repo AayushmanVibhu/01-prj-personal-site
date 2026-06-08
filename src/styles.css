@@ -276,15 +276,22 @@ h1 {
   margin-bottom: 24px;
   max-width: 780px;
   font-family: var(--serif);
-  font-size: clamp(3rem, 5.7vw, 5.1rem);
+  font-size: clamp(2.65rem, 5vw, 4.55rem);
   font-weight: 680;
-  line-height: 1.02;
+  line-height: 1.06;
   letter-spacing: 0;
 }
 
-h1,
+.hero h1 {
+  color: transparent;
+  background:
+    linear-gradient(110deg, #f8f3df 0%, #8df5d0 42%, #7fdcff 72%, #d8c4ff 100%);
+  background-clip: text;
+  text-shadow: none;
+}
+
 .section-heading h2 {
-  text-shadow: 0 0 34px rgba(57, 231, 255, 0.16);
+  text-shadow: 0 0 28px rgba(57, 231, 255, 0.12);
 }
 
 h2 {
@@ -884,13 +891,21 @@ h3 {
 }
 
 .project-detail {
-  min-height: 520px;
+  min-height: 560px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
+  gap: 28px;
+  align-items: center;
   padding: 34px;
   background:
     radial-gradient(circle at 88% 4%, rgba(255, 209, 102, 0.24), transparent 19rem),
     radial-gradient(circle at 0% 0%, rgba(57, 231, 255, 0.23), transparent 22rem),
     radial-gradient(circle at 90% 90%, rgba(255, 107, 138, 0.18), transparent 18rem),
     linear-gradient(135deg, rgba(9, 17, 31, 0.96), rgba(22, 17, 48, 0.95));
+}
+
+.project-copy {
+  min-width: 0;
 }
 
 .project-detail p {
@@ -916,6 +931,113 @@ h3 {
   color: var(--green);
   font-weight: 950;
   text-decoration: none;
+}
+
+.project-map {
+  position: relative;
+  min-height: 330px;
+  overflow: hidden;
+  border: 1px solid rgba(216, 230, 255, 0.14);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(57, 231, 255, 0.15), transparent 9rem),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+}
+
+.project-map::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background-image:
+    linear-gradient(rgba(216, 230, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(216, 230, 255, 0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(circle, black 38%, transparent 78%);
+}
+
+.map-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: rgba(93, 255, 181, 0.34);
+  stroke-dasharray: 10 12;
+  stroke-width: 1.4;
+  animation: lineFlow 10s linear infinite;
+}
+
+.map-core {
+  position: absolute;
+  inset: 50%;
+  z-index: 2;
+  display: grid;
+  width: 112px;
+  height: 112px;
+  place-items: center;
+  border: 1px solid rgba(255, 209, 102, 0.4);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(255, 209, 102, 0.18), transparent 65%),
+    rgba(5, 7, 18, 0.74);
+  box-shadow: 0 0 34px rgba(255, 209, 102, 0.16);
+  transform: translate(-50%, -50%);
+  animation: corePulse 3.2s ease-in-out infinite;
+}
+
+.map-core span {
+  max-width: 88px;
+  color: var(--amber);
+  font-size: 0.78rem;
+  font-weight: 950;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.map-node {
+  position: absolute;
+  z-index: 3;
+  min-width: 76px;
+  padding: 8px 10px;
+  border: 1px solid rgba(216, 230, 255, 0.17);
+  border-radius: 999px;
+  color: var(--soft);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-align: center;
+  animation: nodeFloat 4.5s ease-in-out infinite;
+}
+
+.map-node.node-1 {
+  top: 44px;
+  left: 44px;
+}
+
+.map-node.node-2 {
+  top: 42px;
+  right: 42px;
+  animation-delay: -0.9s;
+}
+
+.map-node.node-3 {
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  animation: nodeFloatCenter 4.5s ease-in-out infinite;
+  animation-delay: -1.8s;
+}
+
+.map-node.node-4 {
+  left: 38px;
+  bottom: 96px;
+  animation-delay: -2.7s;
+}
+
+.map-node.node-5 {
+  right: 38px;
+  bottom: 96px;
+  animation-delay: -3.6s;
 }
 
 .timeline {
@@ -1094,6 +1216,16 @@ h3 {
   }
 }
 
+@keyframes nodeFloatCenter {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-7px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1126,6 +1258,7 @@ h3 {
   .hero-side,
   .about-grid,
   .highlights-section,
+  .project-detail,
   .project-workbench,
   .contact-section {
     grid-template-columns: 1fr;
@@ -1188,6 +1321,7 @@ h3 {
   .highlight-card,
   .skill-card,
   .project-detail,
+  .project-map,
   .contact-section {
     padding: 22px;
   }
@@ -1203,6 +1337,31 @@ h3 {
   .lab-node {
     min-width: 58px;
     font-size: 0.72rem;
+  }
+
+  .project-map {
+    min-height: 280px;
+  }
+
+  .map-node {
+    min-width: 62px;
+    font-size: 0.7rem;
+  }
+
+  .map-node.node-1 {
+    left: 18px;
+  }
+
+  .map-node.node-2 {
+    right: 18px;
+  }
+
+  .map-node.node-4 {
+    left: 14px;
+  }
+
+  .map-node.node-5 {
+    right: 14px;
   }
 
   .node-one,
